@@ -39,3 +39,28 @@ curriculumItems.forEach(clickedItem => {
         clickedItem.classList.toggle('active');
     });
 });
+// === FUNGSI UNTUK TOMBOL BACK TO TOP ===
+
+// Ambil elemen tombolnya
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+// Tambahkan event listener untuk mendeteksi scroll
+window.addEventListener("scroll", () => {
+    // Jika pengguna scroll lebih dari 300px ke bawah
+    if (window.scrollY > 300) {
+        // Tampilkan tombolnya dengan menambahkan class 'active'
+        backToTopBtn.classList.add("active");
+    } else {
+        // Sembunyikan lagi tombolnya
+        backToTopBtn.classList.remove("active");
+    }
+});
+
+// Tambahkan event listener untuk mendeteksi klik
+backToTopBtn.addEventListener("click", () => {
+    // Scroll halaman kembali ke paling atas dengan animasi smooth
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
