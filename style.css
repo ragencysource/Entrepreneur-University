@@ -1102,6 +1102,10 @@ footer {
   .opportunities-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .solution-points .section-title {
+  text-align: center;
+  font-size: 2rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -1152,7 +1156,6 @@ footer {
 /* A. Gaya untuk Tampilan HP (Default) */
 #solution-highlight .solution-points .section-title {
   text-align: center;
-  font-size: 2rem;
 }
 
 #solution-highlight .solution-points {
