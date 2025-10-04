@@ -976,13 +976,18 @@ footer {
 #opportunities .section-title {
   color: #0056b3;
 }
+/* Gaya baru untuk teks highlight di section opportunities */
+.opportunities-highlight {
+  text-transform: uppercase; /* Membuat teks jadi huruf besar semua */
+  color: var(--primary-color); /* Memberi warna biru pada teks */
+}
 
-#opportunities .section-title .highlight-tag {
-  background-color: #0056b3;
-  color: var(--white-color);
-  padding: 5px 12px;
-  border-radius: 6px;
-  white-space: nowrap;
+/* Gaya untuk subjudul di section opportunities */
+.opportunities-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: -15px; /* Mengatur jarak dari judul utama */
+  margin-bottom: 40px;
 }
 
 .opportunities-grid {
