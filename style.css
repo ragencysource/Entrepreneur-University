@@ -980,6 +980,7 @@ footer {
 .opportunities-highlight {
   text-transform: uppercase; /* Membuat teks jadi huruf besar semua */
   color: var(--primary-color); /* Memberi warna biru pada teks */
+  font-weight: 900;
 }
 
 /* Gaya untuk subjudul di section opportunities */
