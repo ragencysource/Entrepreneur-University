@@ -1152,6 +1152,7 @@ footer {
 /* A. Gaya untuk Tampilan HP (Default) */
 #solution-highlight .solution-points .section-title {
   text-align: center;
+  font-size: 2rem;
 }
 
 #solution-highlight .solution-points {
