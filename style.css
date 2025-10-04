@@ -1102,7 +1102,7 @@ footer {
   .opportunities-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  .solution-points .section-title {
+  #solution-highlight .solution-points .section-title {
   text-align: center;
   font-size: 2rem;
   }
