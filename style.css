@@ -1161,7 +1161,7 @@ footer {
 @media (min-width: 992px) {
   #solution-highlight .container {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 40px;
   }
 
