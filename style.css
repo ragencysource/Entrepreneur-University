@@ -1158,7 +1158,7 @@ footer {
 
 
 #solution-highlight .solution-points {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 /* B. Gaya KHUSUS untuk Tampilan Desktop */
@@ -1188,7 +1188,6 @@ footer {
   /* Di dalam @media (min-width: 992px) */
   #solution-highlight .solution-points .section-title {
     text-align: center;
-    margin-top: 40px;
 }
 
 
