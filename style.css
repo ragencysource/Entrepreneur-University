@@ -1147,39 +1147,44 @@ footer {
     background-color: #004494;
 }
 
-/* Tampilan HP (Default) */
-#solution-highlight .solution-points {
-  margin-top: 60px; /* Memberi jarak dari kartu di atasnya */
-}
-
-#solution-highlight .solution-points .section-title {
-  text-align: center; /* Membuat judul kembali rata tengah */
-}
-
-
-/* Tampilan Desktop (Layar Lebar) */
+/* --- Penyesuaian Layout Desktop Baru --- */
 @media (min-width: 992px) {
-  #solution-highlight .container {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-  }
 
-  #solution-highlight .solution-card-wrapper,
-  #solution-highlight .solution-points {
-    flex: 1;
+  /* 1. Mengatur Kartu Solution di bagian atas */
+  .solution-card-wrapper {
+    max-width: 750px; /* Batasi lebar kartu agar tidak terlalu gepeng */
+    margin-left: auto;
+    margin-right: auto;
   }
   
-  #solution-highlight .solution-points {
-    margin-top: 0; /* Menghapus jarak atas di mode desktop */
+  .main-headline-group h2 {
+      font-size: 2.5rem; /* Perbesar teks di dalam kartu */
   }
 
+  /* Membuat judul "Apa yang kamu..." kembali ke tengah dan diberi jarak */
   #solution-highlight .solution-points .section-title {
-      text-align: left; /* Membuat judul rata kiri di mode desktop */
-      font-size: 1.5rem;
-      line-height: 1.4;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 2.5rem; /* Ukuran font normal */
+  }
+  
+  /* 2. Membuat list "Apa yang kamu dapatkan" menjadi 2 kolom */
+  .key-points-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 3. Membuat list "Benefit" menjadi 2 kolom */
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
+
 /* --- Aturan Tambahan untuk Tampilan Desktop --- */
 @media (min-width: 992px) {
 
