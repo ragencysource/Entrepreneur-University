@@ -660,7 +660,6 @@ footer p {
   overflow: hidden;
   padding: 30px;
   color: var(--white-color);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .solution-card-background {
