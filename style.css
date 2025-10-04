@@ -985,8 +985,8 @@ footer {
 
 /* Gaya untuk subjudul di section opportunities */
 .opportunities-subtitle {
-  font-size: 1.2rem;
-  color: #2c3e50;
+  font-size: 1.5rem;
+  color: #0056b3;
   margin-top: -15px; /* Mengatur jarak dari judul utama */
   margin-bottom: 40px;
 }
@@ -1027,8 +1027,8 @@ footer {
 
 .more-text {
   margin-top: 40px;
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   color: #0056b3;
   text-align: center;
 }
