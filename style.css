@@ -1085,11 +1085,6 @@ footer {
   .diagram-icon-container img {
     max-width: 90px;
   }
-  #solution-highlight .solution-points .section-title {
-  text-align: center;
-  margin-top: 40px !important;
-  font-size: 2rem !important;
-  }
 }
 
 @media (min-width: 768px) {
@@ -1152,7 +1147,11 @@ footer {
 #backToTopBtn:hover {
     background-color: #004494;
 }
-
+#solution-highlight .solution-points .section-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2rem; /* <-- Ukuran besar untuk Desktop */
+}
 /* --- FINAL: Pengaturan Lengkap Section Solution (HP & Desktop) --- */
 
 
