@@ -1087,8 +1087,8 @@ footer {
   }
   #solution-highlight .solution-points .section-title {
   text-align: center;
-  margin-top: 40px;
-  font-size: 2rem;
+  margin-top: 40px !important;
+  font-size: 2rem !important;
   }
 }
 
