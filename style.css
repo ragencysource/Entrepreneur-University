@@ -1150,7 +1150,7 @@ footer {
 @media (max-width: 768px) {
 #solution-highlight .solution-points .section-title {
    text-align: center;
-   margin-top: 30px;
+   margin-top: 10px;
    font-size: 1.5rem;
 }
 }
