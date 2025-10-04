@@ -1148,7 +1148,7 @@ footer {
 }
 
 /* --- GANTI ATURAN LAMA ANDA DENGAN YANG INI --- */
-
+@media (min-width: 992px) {
 /* 1. Mengatur Kartu Solution di bagian atas */
 .solution-card-wrapper {
   /* Hapus max-width agar lebarnya penuh seperti CTA */
