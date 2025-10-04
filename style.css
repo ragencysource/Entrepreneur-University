@@ -1151,7 +1151,7 @@ footer {
 #solution-highlight .solution-points .section-title {
    text-align: center;
    margin-top: 40px;
-   font-size: 2rem !important; /* <-- Ukuran besar untuk Desktop */
+   font-size: 2rem;
 }
 }
 /* --- FINAL: Pengaturan Lengkap Section Solution (HP & Desktop) --- */
@@ -1190,7 +1190,6 @@ footer {
   #solution-highlight .solution-points .section-title {
     text-align: center;
     margin-top: 60px;
-    font-size: 2.5rem; /* <-- Ukuran besar untuk Desktop */
 }
 
 
