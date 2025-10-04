@@ -1252,3 +1252,9 @@ footer {
     justify-content: space-between;
   }
 }
+@media (min-width: 992px) {
+  .curriculum-item {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+}
