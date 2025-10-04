@@ -218,25 +218,24 @@ header p {
 }
 
 .problem-card {
-  background-color: #e3f2fd;
-  padding: 15px 25px;
+  background-color: var(--white-color);
+  padding: 25px;
   border-radius: var(--border-radius);
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 15px;
+  box-shadow: var(--box-shadow);
 }
 
-.problem-card .icon {
-  font-size: 1.5rem;
-  color: #0056b3;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
+.problem-icon {
+  height: 70px;
+  width: auto;
 }
 
 .problem-card h3 {
-  font-size: 0.9rem;
-  text-align: left;
+  font-size: 1rem;
+  text-align: center;
   margin: 0;
   font-weight: 500;
   line-height: 1.4;
@@ -299,14 +298,6 @@ header p {
   flex-grow: 1;
 }
 
-.problem-box {
-  background-color: #f5f5f5;
-}
-
-.solution-box {
-  background-color: #e3f2fd;
-}
-
 .point-list li {
   font-size: 0.9rem;
   color: var(--text-color);
@@ -316,12 +307,45 @@ header p {
   gap: 10px;
 }
 
-.problem-box li i {
-  color: #555;
+/* --- Desain Baru untuk Kartu Faktanya --- */
+
+/* Gaya dasar untuk kedua kartu */
+.problem-box,
+.solution-box {
+  background-color: var(--white-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  padding: 25px 20px;
 }
 
+/* Garis atas warna merah untuk kartu "Kenapa?" */
+.problem-box {
+  border-top: 4px solid #e53935;
+}
+
+/* Garis atas warna biru untuk kartu "Harusnya!" */
+.solution-box {
+  border-top: 4px solid var(--primary-color);
+}
+
+/* Mengubah warna judul "KENAPA?" menjadi merah */
+.fact-column .column-title.problem {
+  color: #e53935;
+}
+
+/* Mengubah warna judul "HARUSNYA!" menjadi biru */
+.fact-column .column-title.solution {
+  color: var(--primary-color);
+}
+
+/* Mengubah warna ikon X menjadi merah */
+.problem-box li i {
+  color: #e53935;
+}
+
+/* Memastikan warna ikon centang tetap biru */
 .solution-box li i {
-  color: #0056b3;
+  color: var(--primary-color);
 }
 
 .point-list li:last-child {
@@ -402,6 +426,32 @@ header p {
 .timeline-content p {
   font-size: 0.9rem;
 }
+.timeline-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.timeline-content li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.timeline-content li:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-content li span {
+  font-size: 0.9rem;
+}
+
+.timeline-content li i {
+  color: #fff;
+  margin-right: 10px;
+  margin-top: 3px;
+  font-size: 0.85rem; 
+}
 
 #curriculum {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -442,13 +492,14 @@ header p {
 .curriculum-description {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out, margin-top 0.4s ease-out;
+  transition: max-height 0.4s ease-out;
   color: #2c3e50;
+  padding-top: 0;
 }
 
-.curriculum-item.active .curriculum-description {
-  max-height: 100px;
-  margin-top: 15px;
+.curriculum-description p {
+  padding: 15px 20px;
+  margin: 0;
 }
 
 .benefits-grid {
@@ -944,6 +995,15 @@ footer {
 
 .opportunity-item {
   text-align: center;
+  background-color: var(--white-color);
+  padding: 20px 10px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+}
+
+.opportunity-item:hover {
+  transform: translateY(-5px);
 }
 
 .opportunity-item img {
@@ -1001,7 +1061,6 @@ footer {
     left: 4.5px;
     right: auto;
   }
-
   .diagram-main-title {
     font-size: 1.8rem;
   }
@@ -1086,4 +1145,60 @@ footer {
 
 #backToTopBtn:hover {
     background-color: #004494;
+}
+
+/* Tampilan HP (Default) */
+#solution-highlight .solution-points {
+  margin-top: 60px; /* Memberi jarak dari kartu di atasnya */
+}
+
+#solution-highlight .solution-points .section-title {
+  text-align: center; /* Membuat judul kembali rata tengah */
+}
+
+
+/* Tampilan Desktop (Layar Lebar) */
+@media (min-width: 992px) {
+  #solution-highlight .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  #solution-highlight .solution-card-wrapper,
+  #solution-highlight .solution-points {
+    flex: 1;
+  }
+  
+  #solution-highlight .solution-points {
+    margin-top: 0; /* Menghapus jarak atas di mode desktop */
+  }
+
+  #solution-highlight .solution-points .section-title {
+      text-align: left; /* Membuat judul rata kiri di mode desktop */
+  }
+}
+/* --- Aturan Tambahan untuk Tampilan Desktop --- */
+@media (min-width: 992px) {
+
+  /* 1. Membuat kolom kartu lebih lebar */
+  .fact-column {
+    max-width: 400px; /* Ubah dari 350px menjadi 400px */
+  }
+
+  /* 2. Menambah padding agar kartu terasa lebih besar */
+  .problem-box,
+  .solution-box {
+    padding: 35px 30px; /* Padding dibuat lebih besar */
+  }
+
+  /* 3. Memperbesar judul "KENAPA?" & "HARUSNYA!" */
+  .fact-column .column-title {
+    font-size: 1.2rem;
+  }
+
+  /* 4. Memperbesar teks di dalam list kartu */
+  .point-list li {
+    font-size: 1rem;
+  }
 }
