@@ -305,6 +305,7 @@ header p {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-weight: 500;
 }
 
 /* --- Desain Baru untuk Kartu Faktanya --- */
