@@ -1241,6 +1241,7 @@ footer {
 
   /* 4. Memperbesar teks di dalam list kartu */
   .point-list li {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
 }
