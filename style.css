@@ -1147,44 +1147,46 @@ footer {
     background-color: #004494;
 }
 
-/* --- GANTI ATURAN LAMA ANDA DENGAN YANG INI --- */
+/* --- FINAL: Pengaturan Lengkap Section Solution (HP & Desktop) --- */
+
+/* A. Gaya untuk Tampilan HP (Default) */
+#solution-highlight .solution-points .section-title {
+  text-align: center;
+}
+
+#solution-highlight .solution-points {
+  margin-top: 60px;
+}
+
+/* B. Gaya KHUSUS untuk Tampilan Desktop */
 @media (min-width: 992px) {
-/* 1. Mengatur Kartu Solution di bagian atas */
-.solution-card-wrapper {
-  /* Hapus max-width agar lebarnya penuh seperti CTA */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 60px 40px; /* Perbesar padding vertikal agar kartu lebih tinggi */
-}
 
-/* 2. Perbesar semua teks di dalam kartu */
-.solution-card-content .intro-text {
-  font-size: 1.2rem;
-}
-
-.main-headline-group .tagline {
-  font-size: 1.4rem;
-  padding: 8px 15px;
-}
-
-.main-headline-group h2 {
-    font-size: 3rem; /* Perbesar teks judul utama */
-}
-
-/* Menargetkan paragraf terakhir di dalam kartu */
-.solution-card-content > p:last-of-type {
-    font-size: 1.1rem;
-}
-
-/* --- (sisa aturan CSS desktop lainnya tetap sama) --- */
-  /* Membuat judul "Apa yang kamu..." kembali ke tengah dan diberi jarak */
-  #solution-highlight .solution-points .section-title {
-    text-align: center;
-    margin-top: 60px;
-    font-size: 2.5rem; /* Ukuran font normal */
+  /* Mengatur Kartu Solution di bagian atas */
+  .solution-card-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px 40px;
   }
+
+  /* Memperbesar semua teks di dalam kartu */
+  .solution-card-content .intro-text {
+    font-size: 1.2rem;
+  }
+  .main-headline-group .tagline {
+    font-size: 1.4rem;
+    padding: 8px 15px;
+  }
+  .main-headline-group h2 {
+    font-size: 3rem;
+  }
+  .solution-card-content > p:last-of-type {
+    font-size: 1.1rem;
+  }
+
+  /* (Tidak perlu aturan untuk judul 'Apa yang kamu' di sini, 
+     karena sudah diatur di Gaya HP dan tidak perlu diubah) */
   
-  /* 2. Membuat list "Apa yang kamu dapatkan" menjadi 2 kolom */
+  /* Membuat list "Apa yang kamu dapatkan" menjadi 2 kolom */
   .key-points-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 900px;
@@ -1192,10 +1194,11 @@ footer {
     margin-right: auto;
   }
 
+
   /* 3. Membuat list "Benefit" menjadi 2 kolom */
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 800px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
   }
