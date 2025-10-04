@@ -1176,6 +1176,8 @@ footer {
 
   #solution-highlight .solution-points .section-title {
       text-align: left; /* Membuat judul rata kiri di mode desktop */
+      font-size: 1.5rem;
+      line-height: 1.4;
   }
 }
 /* --- Aturan Tambahan untuk Tampilan Desktop --- */
