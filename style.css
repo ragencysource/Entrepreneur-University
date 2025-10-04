@@ -1147,10 +1147,12 @@ footer {
 #backToTopBtn:hover {
     background-color: #004494;
 }
+@media (max-width: 768px) {
 #solution-highlight .solution-points .section-title {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 2rem; /* <-- Ukuran besar untuk Desktop */
+   text-align: center;
+   margin-top: 40px;
+   font-size: 2rem !important; /* <-- Ukuran besar untuk Desktop */
+}
 }
 /* --- FINAL: Pengaturan Lengkap Section Solution (HP & Desktop) --- */
 
