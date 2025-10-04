@@ -1190,7 +1190,9 @@ footer {
     text-align: center;
 }
 
-
+#solution-highlight .solution-points {
+  margin-top: 60px;
+  }
   /* (Tidak perlu aturan untuk judul 'Apa yang kamu' di sini, 
      karena sudah diatur di Gaya HP dan tidak perlu diubah) */
   
