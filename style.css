@@ -1102,10 +1102,6 @@ footer {
   .opportunities-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  #solution-highlight .solution-points .section-title {
-  text-align: center;
-  font-size: 2rem;
-  }
 }
 
 @media (min-width: 992px) {
@@ -1156,6 +1152,7 @@ footer {
 /* A. Gaya untuk Tampilan HP (Default) */
 #solution-highlight .solution-points .section-title {
   text-align: center;
+  font-size: 2rem;
 }
 
 #solution-highlight .solution-points {
@@ -1186,6 +1183,13 @@ footer {
   .solution-card-content > p:last-of-type {
     font-size: 1.1rem;
   }
+  /* Di dalam @media (min-width: 992px) */
+#solution-highlight .solution-points .section-title {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 2.5rem; /* <-- Ukuran besar untuk Desktop */
+}
+
 
   /* (Tidak perlu aturan untuk judul 'Apa yang kamu' di sini, 
      karena sudah diatur di Gaya HP dan tidak perlu diubah) */
