@@ -1167,31 +1167,28 @@ footer {
   margin-top: 40px;
 }
 
-/* B. Gaya KHUSUS untuk Tampilan Desktop */
 @media (min-width: 992px) {
 
-  /* Mengatur Kartu Solution di bagian atas */
   .solution-card-wrapper {
     margin-left: auto;
     margin-right: auto;
     padding: 60px 40px;
   }
 
-  /* Memperbesar semua teks di dalam kartu */
   .solution-card-content .intro-text {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   .main-headline-group .tagline {
-    font-size: 1.4rem;
-    padding: 8px 15px;
+    font-size: 1.6rem;
+    padding: 10px 18px;
   }
   .main-headline-group h2 {
     font-size: 3rem;
   }
   .solution-card-content > p:last-of-type {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
-  /* Di dalam @media (min-width: 992px) */
+
   #solution-highlight .solution-points .section-title {
     text-align: center;
 }
@@ -1199,10 +1196,7 @@ footer {
 #solution-highlight .solution-points {
   margin-top: 60px;
   }
-  /* (Tidak perlu aturan untuk judul 'Apa yang kamu' di sini, 
-     karena sudah diatur di Gaya HP dan tidak perlu diubah) */
   
-  /* Membuat list "Apa yang kamu dapatkan" menjadi 2 kolom */
   .key-points-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 900px;
@@ -1210,8 +1204,6 @@ footer {
     margin-right: auto;
   }
 
-
-  /* 3. Membuat list "Benefit" menjadi 2 kolom */
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 900px;
@@ -1220,26 +1212,21 @@ footer {
   }
 }
 
-/* --- Aturan Tambahan untuk Tampilan Desktop --- */
 @media (min-width: 992px) {
 
-  /* 1. Membuat kolom kartu lebih lebar */
   .fact-column {
-    max-width: 400px; /* Ubah dari 350px menjadi 400px */
+    max-width: 400px;
   }
 
-  /* 2. Menambah padding agar kartu terasa lebih besar */
   .problem-box,
   .solution-box {
-    padding: 35px 30px; /* Padding dibuat lebih besar */
+    padding: 35px 30px;
   }
 
-  /* 3. Memperbesar judul "KENAPA?" & "HARUSNYA!" */
   .fact-column .column-title {
     font-size: 1.2rem;
   }
 
-  /* 4. Memperbesar teks di dalam list kartu */
   .point-list li {
     font-size: 1.2rem;
     font-weight: 500;
@@ -1256,5 +1243,24 @@ footer {
   .curriculum-item {
     padding-top: 22px;
     padding-bottom: 22px;
+  }
+}
+
+@media (min-width: 992px) {
+  .cta-details {
+    font-size: 1.5rem;
+  }
+
+  .cta-date {
+    font-size: 1.8rem;
+  }
+
+  .cta-action {
+    font-size: 1.45rem;
+  }
+  #cta .btn {
+
+    font-size: 1.2rem;
+    padding: 15px 40px;
   }
 }
