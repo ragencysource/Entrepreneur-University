@@ -307,9 +307,6 @@ header p {
   font-weight: 500;
 }
 
-/* --- Desain Baru untuk Kartu Faktanya --- */
-
-/* Gaya dasar untuk kedua kartu */
 .problem-box,
 .solution-box {
   background-color: var(--white-color);
@@ -318,32 +315,26 @@ header p {
   padding: 25px 20px;
 }
 
-/* Garis atas warna merah untuk kartu "Kenapa?" */
 .problem-box {
   border-top: 4px solid #e53935;
 }
 
-/* Garis atas warna biru untuk kartu "Harusnya!" */
 .solution-box {
   border-top: 4px solid var(--primary-color);
 }
 
-/* Mengubah warna judul "KENAPA?" menjadi merah */
 .fact-column .column-title.problem {
   color: #e53935;
 }
 
-/* Mengubah warna judul "HARUSNYA!" menjadi biru */
 .fact-column .column-title.solution {
   color: var(--primary-color);
 }
 
-/* Mengubah warna ikon X menjadi merah */
 .problem-box li i {
   color: #e53935;
 }
 
-/* Memastikan warna ikon centang tetap biru */
 .solution-box li i {
   color: var(--primary-color);
 }
@@ -976,18 +967,17 @@ footer {
 #opportunities .section-title {
   color: #0056b3;
 }
-/* Gaya baru untuk teks highlight di section opportunities */
+
 .opportunities-highlight {
-  text-transform: uppercase; /* Membuat teks jadi huruf besar semua */
-  color: var(--primary-color); /* Memberi warna biru pada teks */
+  text-transform: uppercase;
+  color: var(--primary-color);
   font-weight: 900;
 }
 
-/* Gaya untuk subjudul di section opportunities */
 .opportunities-subtitle {
   font-size: 1.5rem;
   color: #0056b3;
-  margin-top: -15px; /* Mengatur jarak dari judul utama */
+  margin-top: -15px; 
   margin-bottom: 40px;
 }
 
@@ -1142,30 +1132,27 @@ footer {
     visibility: hidden;
     transform: translateY(15px);
     transition: all 0.3s ease;
-}
+  }
 
 #backToTopBtn.active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-}
+  }
 
 #backToTopBtn:hover {
     background-color: #004494;
-}
+  }
 @media (max-width: 768px) {
 #solution-highlight .solution-points .section-title {
    text-align: center;
    font-size: 1.5rem;
+  }
 }
-}
-/* --- FINAL: Pengaturan Lengkap Section Solution (HP & Desktop) --- */
-
-
 
 #solution-highlight .solution-points {
   margin-top: 40px;
-}
+  }
 
 @media (min-width: 992px) {
 
@@ -1282,5 +1269,14 @@ footer {
   .hero-period {
     font-size: 1rem;
     margin-top: 50px;
+  }
+
+  header {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  .hero-branding {
+    margin-bottom: 45px; 
   }
 }
