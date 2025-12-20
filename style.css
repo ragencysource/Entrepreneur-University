@@ -781,7 +781,7 @@ footer p {
   width: 100%;
   padding-top: 56.25%;
   max-width: 800px;
-  margin: 20px auto 0 auto;
+  margin: 20px auto 30px auto; /* Margin updated */
   border-radius: var(--border-radius);
 }
 
