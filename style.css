@@ -1281,4 +1281,108 @@ footer {
   .hero-branding {
     margin-bottom: 45px; 
   }
+
+}
+/* =========================================
+   PERBAIKAN TAMPILAN MOBILE (RESPONSIF)
+   Tempelkan kode ini di bagian paling bawah file style.css
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* --- 1. PERBAIKAN BAGIAN ALUMNI (2 KOLOM) --- */
+    
+    /* Mengubah grid menjadi 2 kolom di HP */
+    .alumni-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important; /* Jarak antar kartu lebih rapat */
+        padding: 0 10px; /* Sedikit padding di kiri kanan layar */
+    }
+
+    /* Penyesuaian ukuran kartu alumni agar muat 2 jejer */
+    .alumni-card {
+        padding: 15px 10px !important; /* Padding dalam kartu dikecilkan */
+    }
+
+    /* Ukuran foto alumni dikecilkan sedikit agar proporsional */
+    .alumni-card img {
+        width: 80px !important; 
+        height: 80px !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Ukuran font nama dan deskripsi alumni disesuaikan */
+    .alumni-card h4 {
+        font-size: 1rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    .alumni-card p {
+        font-size: 0.8rem !important;
+        line-height: 1.2;
+    }
+
+
+    /* --- 2. PERBAIKAN VISUAL HIRARKI CTA (Daftar Sekarang) --- */
+
+    #cta .cta-content {
+        padding: 30px 15px !important; /* Ruang napas di dalam box CTA */
+    }
+
+    /* Judul Utama CTA - Dibuat besar tapi tidak berlebihan */
+    #cta h2 {
+        font-size: 1.6rem !important;
+        line-height: 1.2;
+        margin-bottom: 15px !important;
+    }
+
+    /* Sub-judul (Detail & Tanggal) - Ukuran sedang untuk info pendukung */
+    .cta-details {
+        font-size: 1rem !important;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    .cta-date {
+        font-size: 1.1rem !important;
+        margin-bottom: 25px !important;
+        padding: 8px 15px;
+        display: inline-block;
+    }
+
+    /* --- Bagian Harga (PENTING) --- */
+    /* Kita perlu menggunakan !important untuk menimpa inline style di HTML */
+
+    /* Teks "Investasi Seminar..." */
+    .cta-price {
+        font-size: 1rem !important; 
+        margin-bottom: 25px !important;
+    }
+
+    /* Harga Coret (400rb) - Dibuat lebih kecil */
+    .cta-price span[style*="text-decoration: line-through"] {
+        font-size: 0.9rem !important;
+        display: block; /* Memaksa pindah baris agar rapi */
+        margin-bottom: 5px;
+    }
+
+    /* Harga Utama (200rb) - Besar dan menonjol */
+    .cta-price span[style*="color: #ffeb3b"] {
+        font-size: 2rem !important; /* Ukuran besar untuk di HP */
+        display: block; /* Memaksa pindah baris */
+        margin-top: 5px;
+    }
+
+    /* Teks ajakan bertindak terakhir sebelum tombol */
+    .cta-action {
+        font-size: 0.9rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Tombol Daftar - Dibuat selebar layar agar mudah dipencet */
+    #cta .btn {
+        width: 100%;
+        display: block;
+        padding: 15px !important;
+        font-size: 1.2rem !important;
+    }
 }
