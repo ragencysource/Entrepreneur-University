@@ -83,25 +83,62 @@ try {
 
 }
 // ===============================
-// ACCORDION CURRICULUM (Supaya Materi Bisa Diklik)
+// ACCORDION CURRICULUM (Satu Buka, Lain Tutup)
 // ===============================
 const curriculumItems = document.querySelectorAll('.curriculum-item');
 
 curriculumItems.forEach(item => {
     item.addEventListener('click', function() {
-        // 1. Toggle class "active" untuk styling tambahan (opsional)
-        this.classList.toggle('active');
+        
+        // 1. Tutup SEMUA item lain yang sedang terbuka
+        curriculumItems.forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.curriculum-description').style.maxHeight = null;
+            }
+        });
 
-        // 2. Ambil elemen deskripsi di dalam item yang diklik
+        // 2. Proses item yang di-klik
+        this.classList.toggle('active');
         const description = this.querySelector('.curriculum-description');
 
-        // 3. Logika Buka/Tutup (Mengatur max-height)
         if (description.style.maxHeight) {
-            // Jika sudah terbuka, tutup kembali (set null agar kembali ke CSS bawaan)
+            // Jika diklik saat sedang terbuka -> Tutup
             description.style.maxHeight = null;
         } else {
-            // Jika tertutup, buka sesuai tinggi kontennya (scrollHeight)
+            // Jika diklik saat tertutup -> Buka
             description.style.maxHeight = description.scrollHeight + "px";
+        }
+    });
+});
+// ===============================
+// FAQ ACCORDION (Satu Buka, Lain Tutup)
+// ===============================
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+    question.addEventListener('click', function() {
+        const parentItem = this.parentElement; // Mengambil elemen .faq-item pembungkusnya
+        const answer = parentItem.querySelector('.faq-answer');
+
+        // 1. Tutup SEMUA item FAQ lain yang sedang terbuka
+        document.querySelectorAll('.faq-item').forEach(item => {
+            if (item !== parentItem) {
+                item.classList.remove('active');
+                const otherAnswer = item.querySelector('.faq-answer');
+                if (otherAnswer) otherAnswer.style.maxHeight = null;
+            }
+        });
+
+        // 2. Toggle item yang sedang diklik
+        parentItem.classList.toggle('active');
+        
+        if (parentItem.classList.contains('active')) {
+            // Buka
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+            // Tutup
+            answer.style.maxHeight = null;
         }
     });
 });
