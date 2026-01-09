@@ -80,4 +80,28 @@ try {
     });
 } catch (e) {
     console.log("Swiper library belum terpasang atau tidak digunakan.");
+
 }
+// ===============================
+// ACCORDION CURRICULUM (Supaya Materi Bisa Diklik)
+// ===============================
+const curriculumItems = document.querySelectorAll('.curriculum-item');
+
+curriculumItems.forEach(item => {
+    item.addEventListener('click', function() {
+        // 1. Toggle class "active" untuk styling tambahan (opsional)
+        this.classList.toggle('active');
+
+        // 2. Ambil elemen deskripsi di dalam item yang diklik
+        const description = this.querySelector('.curriculum-description');
+
+        // 3. Logika Buka/Tutup (Mengatur max-height)
+        if (description.style.maxHeight) {
+            // Jika sudah terbuka, tutup kembali (set null agar kembali ke CSS bawaan)
+            description.style.maxHeight = null;
+        } else {
+            // Jika tertutup, buka sesuai tinggi kontennya (scrollHeight)
+            description.style.maxHeight = description.scrollHeight + "px";
+        }
+    });
+});
