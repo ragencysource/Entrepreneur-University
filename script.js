@@ -1,62 +1,83 @@
-const faqItems = document.querySelectorAll('.faq-item');
+'use strict';
 
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
+// ===============================
+// SELECT ELEMENT
+// ===============================
+// Mengambil elemen berdasarkan ID dan Tag yang ada di HTML Anda
+const goTopBtn = document.getElementById('backToTopBtn');
+const header = document.querySelector('header');
 
-    question.addEventListener('click', () => {
-        faqItems.forEach(otherItem => {
-            if (otherItem !== item && otherItem.classList.contains('active')) {
-                otherItem.classList.remove('active');
-                otherItem.querySelector('.faq-answer').style.maxHeight = null;
-            }
-        });
-
-        item.classList.toggle('active');
-        if (item.classList.contains('active')) {
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-        } else {
-            answer.style.maxHeight = null;
-        }
-    });
-});
-
-const curriculumItems = document.querySelectorAll('.curriculum-item');
-
-curriculumItems.forEach(item => {
-    const question = item.querySelector('h4');
-    const description = item.querySelector('.curriculum-description');
-
-    item.addEventListener('click', () => {
-        curriculumItems.forEach(otherItem => {
-            if (otherItem !== item && otherItem.classList.contains('active')) {
-                otherItem.classList.remove('active');
-                otherItem.querySelector('.curriculum-description').style.maxHeight = null;
-            }
-        });
-
-        item.classList.toggle('active');
-        if (item.classList.contains('active')) {
-            description.style.maxHeight = description.scrollHeight + 'px';
-        } else {
-            description.style.maxHeight = null;
-        }
-    });
-});
-
-const backToTopBtn = document.getElementById("backToTopBtn");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        backToTopBtn.classList.add("active");
+// ===============================
+// SCROLL EVENT (Munculkan Tombol & Efek Header)
+// ===============================
+window.addEventListener('scroll', function() {
+    // 1. Logika untuk Header (jika ingin header berubah saat scroll)
+    if (window.scrollY >= 20) {
+        if(header) header.classList.add('active');
     } else {
-        backToTopBtn.classList.remove("active");
+        if(header) header.classList.remove('active');
+    }
+    
+    // 2. Logika untuk Tombol Back To Top
+    if (window.scrollY >= 800) {
+        if(goTopBtn) goTopBtn.classList.add('active');
+    } else {
+        if(goTopBtn) goTopBtn.classList.remove('active');
     }
 });
 
-backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+// ===============================
+// KLIK EVENT (Fungsi Kembali ke Atas)
+// ===============================
+if (goTopBtn) {
+    goTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
-});
+}
+
+// ===============================
+// NOTE: BAGIAN MENU MOBILE DIHAPUS
+// ===============================
+/* Kode menu mobile/overlay saya hapus karena di file index.html 
+   tidak ditemukan tombol dengan atribut [data-menu-open-btn].
+   Jika kode lama dibiarkan, itu akan menyebabkan error "null" 
+   yang membuat tombol Back to Top macet total.
+*/
+
+// ===============================
+// SWIPER (KODE TESTIMONI)
+// ===============================
+// Pastikan library Swiper sudah diload di HTML jika ingin pakai ini.
+// Jika belum ada library Swiper di HTML, kode ini akan error.
+// Saya bungkus try-catch agar aman.
+try {
+    var swiper = new Swiper('.quality-slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }
+    });
+} catch (e) {
+    console.log("Swiper library belum terpasang atau tidak digunakan.");
+}

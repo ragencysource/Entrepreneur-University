@@ -165,35 +165,161 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: radial-gradient(circle at top center, #0069d9 0%, #004494 60%, #002a5c 100%);
   color: #fff;
-  padding: 50px 0 60px 0;
+  padding: 80px 0 100px 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-branding {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-logo {
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.hero-university-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 header h1 {
-  font-size: clamp(2.5rem, 8vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 10px 0 20px 0;
+  font-family: 'Product Sans', sans-serif;
+  color: #ffffff;
+  margin-bottom: 25px;
+  line-height: 1.1;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 800;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-header h1 span {
+.hero-tagline {
   display: block;
-  font-size: clamp(1rem, 4vw, 1.2rem);
-  font-weight: 500;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 700;
+  color: #FFD700;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  opacity: 0.9;
-  margin-bottom: 5px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-header p {
-  font-size: clamp(1rem, 4vw, 1.1rem);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.7;
-  opacity: 0.9;
+.hero-subline {
+  display: block;
+  font-weight: 300;
+  font-size: 0.6em;
+  margin-top: 10px;
+  opacity: 0.95;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+.hero-date-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.hero-date-badge:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hero-date-badge i {
+  color: #FFD700;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 60px 20px 80px 20px;
+  }
+
+  .hero-branding {
+    margin-bottom: 20px;
+  }
+
+  .hero-logo {
+    height: 40px;
+  }
+
+  header h1 {
+    line-height: 1.2;
+  }
+
+  .hero-tagline {
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
+
+  .hero-subline {
+    font-size: 0.5em;
+    display: block;
+    margin-top: 5px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    padding: 0 10px;
+    margin-bottom: 30px;
+  }
+
+  .hero-date-badge {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 20px;
+  }
 }
 
 .scholarship-banner {
@@ -385,16 +511,16 @@ header p {
 }
 
 .timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    right: -7.5px;
-    background-color: var(--primary-color);
-    border: none; 
-    top: 28px; 
-    border-radius: 50%;
-    z-index: 1;
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: -7.5px;
+  background-color: var(--primary-color);
+  border: none;
+  top: 28px;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .timeline-item.right::after {
@@ -417,6 +543,7 @@ header p {
 .timeline-content p {
   font-size: 0.9rem;
 }
+
 .timeline-content ul {
   list-style: none;
   padding-left: 0;
@@ -441,7 +568,7 @@ header p {
   color: #fff;
   margin-right: 10px;
   margin-top: 3px;
-  font-size: 0.85rem; 
+  font-size: 0.85rem;
 }
 
 #curriculum {
@@ -781,7 +908,7 @@ footer p {
   width: 100%;
   padding-top: 56.25%;
   max-width: 800px;
-  margin: 20px auto 30px auto; /* Margin updated */
+  margin: 20px auto 30px auto;
   border-radius: var(--border-radius);
 }
 
@@ -979,7 +1106,7 @@ footer {
 .opportunities-subtitle {
   font-size: 1.5rem;
   color: #0056b3;
-  margin-top: -15px; 
+  margin-top: -15px;
   margin-bottom: 40px;
 }
 
@@ -1030,14 +1157,6 @@ footer {
     font-size: 2rem;
   }
 
-  header p {
-    padding: 0 25px;
-  }
-
-  header {
-    padding: 20px 0 40px 0;
-  }
-
   .timeline::after {
     left: 10px;
   }
@@ -1059,6 +1178,7 @@ footer {
     left: 4.5px;
     right: auto;
   }
+
   .diagram-main-title {
     font-size: 1.8rem;
   }
@@ -1100,7 +1220,6 @@ footer {
   .opportunities-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
 }
 
 @media (min-width: 992px) {
@@ -1112,52 +1231,53 @@ footer {
     max-width: 350px;
   }
 }
+
 #backToTopBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #0056b3;
-    color: white;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    font-size: 1.2rem;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(15px);
-    transition: all 0.3s ease;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #0056b3;
+  color: white;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+}
 
 #backToTopBtn.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
 #backToTopBtn:hover {
-    background-color: #004494;
-  }
+  background-color: #004494;
+}
+
 @media (max-width: 768px) {
-#solution-highlight .solution-points .section-title {
-   text-align: center;
-   font-size: 1.5rem;
+  #solution-highlight .solution-points .section-title {
+    text-align: center;
+    font-size: 1.5rem;
   }
 }
 
 #solution-highlight .solution-points {
   margin-top: 40px;
-  }
+}
 
 @media (min-width: 992px) {
-
   .solution-card-wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -1167,25 +1287,28 @@ footer {
   .solution-card-content .intro-text {
     font-size: 1.4rem;
   }
+
   .main-headline-group .tagline {
     font-size: 1.6rem;
     padding: 10px 18px;
   }
+
   .main-headline-group h2 {
     font-size: 3rem;
   }
+
   .solution-card-content > p:last-of-type {
     font-size: 1.3rem;
   }
 
   #solution-highlight .solution-points .section-title {
     text-align: center;
-}
-
-#solution-highlight .solution-points {
-  margin-top: 60px;
   }
-  
+
+  #solution-highlight .solution-points {
+    margin-top: 60px;
+  }
+
   .key-points-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 900px;
@@ -1202,7 +1325,6 @@ footer {
 }
 
 @media (min-width: 992px) {
-
   .fact-column {
     max-width: 400px;
   }
@@ -1221,6 +1343,7 @@ footer {
     font-weight: 500;
   }
 }
+
 @media (min-width: 992px) {
   .curriculum-header {
     display: flex;
@@ -1228,6 +1351,7 @@ footer {
     justify-content: space-between;
   }
 }
+
 @media (min-width: 992px) {
   .curriculum-item {
     padding-top: 22px;
@@ -1247,142 +1371,116 @@ footer {
   .cta-action {
     font-size: 1.45rem;
   }
-  #cta .btn {
 
+  #cta .btn {
     font-size: 1.2rem;
     padding: 15px 40px;
   }
 }
 
-@media (min-width: 992px) {
-  header h1 {
-    font-size: 4.2rem;
-  }
-
-  header h1 span {
-    font-size: 1.5rem; 
-  }
-
-  header p {
-    font-size: 1.25rem;
-    max-width: 600px;
-  }
-
-  .hero-period {
-    font-size: 1rem;
-    margin-top: 50px;
-  }
-
-  header {
-    padding-top: 30px;
-    padding-bottom: 40px;
-  }
-
-  .hero-branding {
-    margin-bottom: 45px; 
-  }
-
-}
-/* =========================================
-   PERBAIKAN TAMPILAN MOBILE (RESPONSIF)
-   Tempelkan kode ini di bagian paling bawah file style.css
-========================================= */
-
 @media screen and (max-width: 768px) {
+  .alumni-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    padding: 0 10px;
+  }
 
-    /* --- 1. PERBAIKAN BAGIAN ALUMNI (2 KOLOM) --- */
-    
-    /* Mengubah grid menjadi 2 kolom di HP */
-    .alumni-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px !important; /* Jarak antar kartu lebih rapat */
-        padding: 0 10px; /* Sedikit padding di kiri kanan layar */
-    }
+  .alumni-card {
+    padding: 15px 10px !important;
+  }
 
-    /* Penyesuaian ukuran kartu alumni agar muat 2 jejer */
-    .alumni-card {
-        padding: 15px 10px !important; /* Padding dalam kartu dikecilkan */
-    }
+  .alumni-card img {
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 10px !important;
+  }
 
-    /* Ukuran foto alumni dikecilkan sedikit agar proporsional */
-    .alumni-card img {
-        width: 80px !important; 
-        height: 80px !important;
-        margin-bottom: 10px !important;
-    }
+  .alumni-card h4 {
+    font-size: 1rem !important;
+    margin-bottom: 5px !important;
+  }
 
-    /* Ukuran font nama dan deskripsi alumni disesuaikan */
-    .alumni-card h4 {
-        font-size: 1rem !important;
-        margin-bottom: 5px !important;
-    }
+  .alumni-card p {
+    font-size: 0.8rem !important;
+    line-height: 1.2;
+  }
 
-    .alumni-card p {
-        font-size: 0.8rem !important;
-        line-height: 1.2;
-    }
+  #cta .cta-content {
+    padding: 30px 15px !important;
+  }
 
+  #cta h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.2;
+    margin-bottom: 15px !important;
+  }
 
-    /* --- 2. PERBAIKAN VISUAL HIRARKI CTA (Daftar Sekarang) --- */
+  .cta-details {
+    font-size: 1rem !important;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
 
-    #cta .cta-content {
-        padding: 30px 15px !important; /* Ruang napas di dalam box CTA */
-    }
+  .cta-date {
+    font-size: 1.1rem !important;
+    margin-bottom: 25px !important;
+    padding: 8px 15px;
+    display: inline-block;
+  }
 
-    /* Judul Utama CTA - Dibuat besar tapi tidak berlebihan */
-    #cta h2 {
-        font-size: 1.6rem !important;
-        line-height: 1.2;
-        margin-bottom: 15px !important;
-    }
+  .cta-price {
+    font-size: 1rem !important;
+    margin-bottom: 25px !important;
+  }
 
-    /* Sub-judul (Detail & Tanggal) - Ukuran sedang untuk info pendukung */
-    .cta-details {
-        font-size: 1rem !important;
-        line-height: 1.4;
-        margin-bottom: 15px;
-    }
-    .cta-date {
-        font-size: 1.1rem !important;
-        margin-bottom: 25px !important;
-        padding: 8px 15px;
-        display: inline-block;
-    }
+  .cta-price span[style*="text-decoration: line-through"] {
+    font-size: 0.9rem !important;
+    display: block;
+    margin-bottom: 5px;
+  }
 
-    /* --- Bagian Harga (PENTING) --- */
-    /* Kita perlu menggunakan !important untuk menimpa inline style di HTML */
+  .cta-price span[style*="color: #ffeb3b"] {
+    font-size: 2rem !important;
+    display: block;
+    margin-top: 5px;
+  }
 
-    /* Teks "Investasi Seminar..." */
-    .cta-price {
-        font-size: 1rem !important; 
-        margin-bottom: 25px !important;
-    }
+  .cta-action {
+    font-size: 0.9rem !important;
+    margin-bottom: 20px !important;
+  }
 
-    /* Harga Coret (400rb) - Dibuat lebih kecil */
-    .cta-price span[style*="text-decoration: line-through"] {
-        font-size: 0.9rem !important;
-        display: block; /* Memaksa pindah baris agar rapi */
-        margin-bottom: 5px;
-    }
+  #cta .btn {
+    width: 100%;
+    display: block;
+    padding: 15px !important;
+    font-size: 1.2rem !important;
+  }
 
-    /* Harga Utama (200rb) - Besar dan menonjol */
-    .cta-price span[style*="color: #ffeb3b"] {
-        font-size: 2rem !important; /* Ukuran besar untuk di HP */
-        display: block; /* Memaksa pindah baris */
-        margin-top: 5px;
-    }
+  #opportunities .section-title {
+    font-size: 1.6rem;
+    padding: 0 15px;
+  }
 
-    /* Teks ajakan bertindak terakhir sebelum tombol */
-    .cta-action {
-        font-size: 0.9rem !important;
-        margin-bottom: 20px !important;
-    }
+  .opportunities-subtitle {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+}
 
-    /* Tombol Daftar - Dibuat selebar layar agar mudah dipencet */
-    #cta .btn {
-        width: 100%;
-        display: block;
-        padding: 15px !important;
-        font-size: 1.2rem !important;
-    }
+#opportunities .section-title {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.opportunities-subtitle {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  color: #555;
 }
